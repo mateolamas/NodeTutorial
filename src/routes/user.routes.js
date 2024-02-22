@@ -9,6 +9,7 @@ import userJWTDTO from '#Dto/user-jwt.dto.js';
 import userSignupController from '#Controllers/user-signup.controller.js';
 import userLoginController from '#Controllers/user-login.controller.js';
 import userProfileController from '#Controllers/user-profile.controller.js';
+import userUpdateDataController from '#Controllers/user-update-data.controller.js';
 
 const userRouter = Router();
 
@@ -16,7 +17,7 @@ const userRouter = Router();
 userRouter.post('/signup', userSignupDTO, userSignupController);
 userRouter.post('/login', userLoginDTO, userLoginController);
 userRouter.get('/profile', userJWTDTO, userProfileController);
-userRouter.patch('/update-data', userJWTDTO, userUpdateDataDTO);
+userRouter.patch('/update-data', userJWTDTO, userUpdateDataDTO, userUpdateDataController);
 userRouter.patch('update-email', userJWTDTO, userUpdateEmailDTO);
 userRouter.patch('/update-password', userJWTDTO, userUpdatePasswordDTO);
 userRouter.delete('/unregister', userJWTDTO, userUnregisterDTO);
